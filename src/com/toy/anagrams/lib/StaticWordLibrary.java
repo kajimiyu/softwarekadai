@@ -31,18 +31,19 @@
 
 package com.toy.anagrams.lib;
 
+import java.awt.List;
+import java.util.Arrays;
+import java.util.Collections;
+
 /**
  * Implementation of the logic for the Anagram Game application.
  */
 final class StaticWordLibrary extends WordLibrary {
 
     private static final String[] WORD_LIST = {
-        "abstraction",
-        "ambiguous",
-        "arithmetic",
-        "backslash",
-        "bitmap",
-        "circumstance",
+        "friend",
+        "god",
+        "breakfirst",
         "combination",
         "consequently",
         "consortium",
@@ -83,13 +84,10 @@ final class StaticWordLibrary extends WordLibrary {
         "unsigned",
         "traditional"};
 
-    private static final String[] SCRAMBLED_WORD_LIST = {
-        "batsartcoin",
-        "maibuguos",
-        "ratimhteci",
-        "abkclssha",
-        "ibmtpa",
-        "iccrmutsnaec",
+   /* private static final String[] SCRAMBLED_WORD_LIST = {
+        "firedn",
+        "dog",
+        "fistrreakb",
         "ocbmnitaoni",
         "ocsnqeeutnyl",
         "ocsnroitmu",
@@ -130,6 +128,28 @@ final class StaticWordLibrary extends WordLibrary {
         "nuisngde",
         "rtdatioialn"
     };
+    */
+    
+    private String SCRAMBLED_WORD_LIST(String words) {
+    	
+    	String longword = words;
+
+    	String WORD[] = longword.split("");
+    	
+    	 java.util.List<String> list=Arrays.asList(WORD);
+    	 
+    	 Collections.shuffle(list);
+    	 
+    	 String SWORD[] =(String[])list.toArray(new String[list.size()]);
+    		
+    	 StringBuffer buf = new StringBuffer();
+    	 for (int i = 0; i < SWORD.length; i++) {
+    	 buf.append(SWORD[i]);
+    	 }
+		// TODO Auto-generated method stub
+		return buf.toString();
+	}
+
     
     final static WordLibrary DEFAULT = new StaticWordLibrary();
 
@@ -154,10 +174,11 @@ final class StaticWordLibrary extends WordLibrary {
      * @return word at that index in its scrambled form
      */
     public String getScrambledWord(int idx) {
-        return SCRAMBLED_WORD_LIST[idx];
+        return SCRAMBLED_WORD_LIST(WORD_LIST[idx]);
     }
 
-    /**
+   
+	/**
      * Gets the number of words in the library.
      * @return the total number of plain/scrambled word pairs in the library
      */
