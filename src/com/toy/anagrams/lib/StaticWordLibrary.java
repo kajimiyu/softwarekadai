@@ -40,8 +40,6 @@ final class StaticWordLibrary extends WordLibrary {
         "friend",
         "god",
         "breakfirst",
-        "bitmap",
-        "circumstance",
         "combination",
         "consequently",
         "consortium",
@@ -85,9 +83,7 @@ final class StaticWordLibrary extends WordLibrary {
     private static final String[] SCRAMBLED_WORD_LIST = {
         "firedn",
         "dog",
-        "abkclssha",
         "fistrreakb",
-        "iccrmutsnaec",
         "ocbmnitaoni",
         "ocsnqeeutnyl",
         "ocsnroitmu",
